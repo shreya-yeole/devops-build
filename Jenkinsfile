@@ -16,7 +16,7 @@ pipeline {
         stage("Build") {
             steps {
 				script {
-					def imageTag = "${env.BRANCH_NAME}:latest"
+					def imageTag = (env.BRANCH_NAME == 'dev') ? "${DOCKER_DEV_REPO}:latest" : "${DOCKER_PROD_REPO}:latest"
 					docker.build(imageTag)
                 }
             }

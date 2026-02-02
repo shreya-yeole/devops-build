@@ -8,6 +8,5 @@ Thumbs.db
 *.log
 .cache/
 coverage/
-build/
 package-lock.json
 yarn.lock

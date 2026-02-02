@@ -21,7 +21,7 @@ pipeline {
                 }
             }
         }
-        stage("Push to docker hub") {
+        stage("Push image to docker hub") {
             steps {
 				script {
 					def imageTag = (env.BRANCH_NAME == 'dev') ? "${DOCKER_DEV_REPO}:latest" : "${DOCKER_PROD_REPO}:latest"
